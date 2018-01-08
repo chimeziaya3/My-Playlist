@@ -57,6 +57,10 @@ footer {
   justify-content: center;
   background-color: rgba(221,238,249,0.8);
 }
+.subtitle { 
+text-align: center;
+display: block;
+}
 #About {
   margin: 0 auto;
   margin-bottom:40px;
