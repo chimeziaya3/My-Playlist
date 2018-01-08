@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import '../App.css';
 import Songlist from './SongList';
-import AddButton from './addButton.jsx';
+import AddButton from './AddButton';
 
 class Player extends Component {
   constructor(props) {
