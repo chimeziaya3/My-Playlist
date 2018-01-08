@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import '../App.css';
 import Songlist from './SongList';
-import AddButton from './AddButton';
+
 
 class Player extends Component {
   constructor(props) {
@@ -126,7 +126,7 @@ class Player extends Component {
         console.log(json);
         this.setState((prevState) => {
           return {
-            src: json.playlistData.songs[e].src,
+            src: json.playlistData[e].src,
           }
         })
       })
