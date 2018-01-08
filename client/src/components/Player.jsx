@@ -35,7 +35,7 @@ class Player extends Component {
         console.log(json);
         this.setState((prevState) => {
           return {
-            playlist: json.playlistData.songs,
+            playlist: json.playlistData,
           }
         })
       })
@@ -69,12 +69,12 @@ class Player extends Component {
       return res.json()
     })
     .then((json) => {
-      if (json.playlistData.songs.id !== undefined) {
+      if (json.playlistData.id !== undefined) {
         const newSong = {
-          id: json.playlistData.songs.id,
-          artist: json.playlistData.songs.artist,
-          song: json.playlistData.songs.song,
-          src: json.playlistData.songs.src,
+          id: json.playlistData.id,
+          artist: json.playlistData.artist,
+          song: json.playlistData.song,
+          src: json.playlistData.src,
         }
         this.setState((prevState) => {
           return {

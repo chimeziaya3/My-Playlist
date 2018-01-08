@@ -2,14 +2,12 @@ import React, { Component } from 'react';
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem,  } from 'react-bootstrap';
 import logo from './logo.svg';
 import './App.css';
-import Hero from './components/Hero';
 import {
   BrowserRouter as Router,
   Route,
   Link
 } from 'react-router-dom';
 
-import Footer from './components/Footer';
 import About from './components/About';
 import Player from './components/Player';
 import Landing from './components/Landing';
@@ -54,7 +52,7 @@ class App extends Component {
           </main>
      
         
-        <Footer />
+        {/* <Footer /> */}
       </div>
       </Router>
     );
