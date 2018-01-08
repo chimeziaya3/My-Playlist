@@ -6,7 +6,7 @@ myPlaylistController.index = (req, res) => {
   Playlist.findAll()
     .then(playlist => {
       res.json({ message: 'ok',
-        playlistData: {playlist},
+        playlistData: playlist,
       });
   })
   .catch(err => {
@@ -20,7 +20,7 @@ myPlaylistController.show = (req, res) => {
     .then(playlist => {
       res.json({
         message: 'ok',
-        playlist: {playlist},
+        playlist: playlist,
       });
     })
     .catch(err => {
@@ -33,10 +33,10 @@ myPlaylistController.create = (req, res) => {
   Playlist.create({
     artist: req.body.artist,
     song: req.body.song,
-    src: req.body.src
+    src: req.body.src,
   })
   .then(playlist => {
-    res.json({message: 'ok', song: {playlist}});
+    res.json({message: 'ok', playlist: playlist});
   })
   .catch(err => {
     res.status(400).json({message: '400', err});
@@ -50,7 +50,7 @@ myPlaylistController.update = (req, res) => {
     src: req.body.src,
   }, req.params.id)
   .then(song => {
-    res.json({message: 'ok', song: {song}});
+    res.json({message: 'ok', playlist: playlist});
   })
   .catch(err => {
     res.status(400).json(err);
