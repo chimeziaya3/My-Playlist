@@ -2,27 +2,176 @@
   text-align: center;
 }
 
+
+/*.Navbar {
+  text-transform: uppercase;
+  height: 60px;
+}*/
+
+
+/*nav {
+  flex: 0 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  height: 40px;
+  background-color: #222222;
+  box-shadow: 1px 1px 50px #888888;
+  border-bottom: 1px solid white;
+}*/
+
+/*footer {
+  flex: 0 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: uppercase;
+  color: white;
+  height: 40px;
+  text-decoration: none;
+  background-color: #222222;
+  box-shadow: 10px 10px 5px #888888;*/
+/*}*/
+
+footer {
+  text-transform: uppercase;
+  color: white;
+  height: 40px;
+  text-decoration: none;
+  background-color: #222222;
+  box-shadow: 10px 10px 5px #888888;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+#hero {
+  margin: 0 auto;
+  padding: 20px;
+  height: 720px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(221,238,249,0.8);
+}
+#About {
+  margin: 0 auto;
+  margin-bottom:40px;
+  padding: 80px;
+  height: 720px;
+  background: rgba(221,238,249,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+
+}
+
+.aboutText{
+padding: 30px;
+margin-top: 20%;
+}
+
+.App {
+text-align: center;
+}
+
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+animation: App-logo-spin infinite 20s linear;
+height: 80px;
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
+background-color: #222;
+height: 150px;
+padding: 20px;
+color: white;
 }
 
 .App-intro {
-  font-size: large;
+font-size: large;
+}
+
+.Navbar{
+box-shadow: none;
+margin-bottom: 0;
+}
+
+.App-player{
+height: 80vh;
+width: 100%;
+background-color: red;
+display: flex;
+position: relative;
+}
+
+.player{
+flex: 2;
+width: 100%;
+height: 100%;
+background-color: black;
+border: none;
+}
+
+.songlist{
+flex: 1;
+width: 100%;
+height: 100%;
+background: rgba(56,54,54,1);
+overflow: scroll;
+background: -moz-radial-gradient(center, ellipse cover, rgba(56,54,54,1) 0%, rgba(41,39,40,1) 30%, rgba(14,14,15,1) 100%);
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(56,54,54,1)), color-stop(30%, rgba(41,39,40,1)), color-stop(100%, rgba(14,14,15,1)));
+background: -webkit-radial-gradient(center, ellipse cover, rgba(56,54,54,1) 0%, rgba(41,39,40,1) 30%, rgba(14,14,15,1) 100%);
+background: -o-radial-gradient(center, ellipse cover, rgba(56,54,54,1) 0%, rgba(41,39,40,1) 30%, rgba(14,14,15,1) 100%);
+background: -ms-radial-gradient(center, ellipse cover, rgba(56,54,54,1) 0%, rgba(41,39,40,1) 30%, rgba(14,14,15,1) 100%);
+background: radial-gradient(ellipse at center, rgba(56,54,54,1) 0%, rgba(41,39,40,1) 30%, rgba(14,14,15,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#383636', endColorstr='#0e0e0f', GradientType=1 );
+}
+.addSongBtn{
+border: none;
+width: 100%;
+background: rgba(147,206,222,1);
+background: -moz-radial-gradient(center, ellipse cover, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(147,206,222,1)), color-stop(41%, rgba(117,189,209,1)), color-stop(100%, rgba(73,165,191,1)));
+background: -webkit-radial-gradient(center, ellipse cover, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+background: -o-radial-gradient(center, ellipse cover, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+background: -ms-radial-gradient(center, ellipse cover, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+background: radial-gradient(ellipse at center, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#93cede', endColorstr='#49a5bf', GradientType=1 );
+color: white;
+}
+.addSongBtn:hover{
+background: rgba(147,206,222,1);
+}
+.songs{
+border: none;
+width: 100%;
+background-color: rgb(39, 40, 40);
+color: white;
+}
+.songs:hover{
+background-color: rgba(39, 40, 40, .5);
+box-shadow: 5px 2px 10px 1px black;
+border-radius: 10px;
+transition: .3s;
+
+}
+
+.songLi{
+
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+from { transform: rotate(0deg); }
+to { transform: rotate(360deg); }
+}
+
+
+.hero-text {
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: 500;
 }
