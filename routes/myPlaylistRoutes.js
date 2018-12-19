@@ -4,6 +4,7 @@ const myPlaylistController = require('../controllers/myPlaylistController');
 const myPlaylistRoutes = express.Router();
 
 myPlaylistRoutes.get('/', myPlaylistController.index);
+myPlaylistRoutes.get('/edit/:id', myPlaylistController.edit);
 myPlaylistRoutes.get('/:id', myPlaylistController.show);
 myPlaylistRoutes.post('/', myPlaylistController.create);
 myPlaylistRoutes.put('/:id', myPlaylistController.update);

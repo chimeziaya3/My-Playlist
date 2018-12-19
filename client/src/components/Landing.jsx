@@ -8,10 +8,8 @@ class Landing extends Component {
   render() {
     return (
       <div id="Landing">
-        
         <Hero />
         <About />
-        
       </div>
     );
   }

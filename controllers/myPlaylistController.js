@@ -27,6 +27,20 @@ myPlaylistController.show = (req, res) => {
       res.status(400).json({message: '400', err});
     });
 };
+myPlaylistController.edit = (req,res) => {
+  Playlist.findById(req.params.id)
+    .then(playlist => {
+      console.log(playlist);
+      res.json({
+        message: 'ok',
+        playlist: playlist,
+        id: req.params.id,
+      });
+    })
+    .catch(err => {
+      res.status(400).json({message: '400', err});
+    });
+};
 
 myPlaylistController.create = (req, res) => {
   console.log(req);
@@ -49,7 +63,7 @@ myPlaylistController.update = (req, res) => {
     song: req.body.song,
     src: req.body.src,
   }, req.params.id)
-  .then(song => {
+  .then(playlist => {
     res.json({message: 'ok', playlist: playlist});
   })
   .catch(err => {

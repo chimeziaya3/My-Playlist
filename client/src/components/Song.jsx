@@ -9,8 +9,23 @@ class Song extends Component {
     this.state = {
       isBeingAdded: false,
       isBeingEdited: false,
+      inputArtistValue: this.props.playlist.artist,
+      inputSongValue: this.props.playlist.song,
+      inputSrcValue: this.props.playlist.src,
     }
     
+    this.handleInputArtistChange = this.handleInputArtistChange.bind(this);
+    this.handleInputSongChange = this.handleInputSongChange.bind(this);
+    this.handleInputSrcChange = this.handleInputSrcChange.bind(this);
+  }
+  handleInputArtistChange(event){
+      this.setState({inputArtistValue: event.target.value});
+  }
+  handleInputSongChange(event){
+      this.setState({inputSongValue: event.target.value});
+  }
+  handleInputSrcChange(event){
+      this.setState({inputSrcValue: event.target.value});
   }
 
   renderEditForm() {
@@ -24,60 +39,29 @@ class Song extends Component {
         <input
             name='artist' 
             type='text' 
-            value={this.props.artist}
+            value={this.state.inputArtistValue}
             placeholder='Artist'
-            onChange={this.props.handleInputArtistChange}
+            onChange={this.handleInputArtistChange}
         />
         <input 
             name='song'
             type='text' 
-            value={this.props.song}
+            value={this.state.inputSongValue}
             placeholder='Song'
-            onChange={this.props.handleInputSongChange}
+            onChange={this.handleInputSongChange}
         />
         <input
             name='src' 
             type='text'
-            value={this.props.src} 
+            value={this.state.inputSrcValue} 
             placeholder='link'
-            onChange={this.props.handleInputSrcChange}
-        />
-        <button>save</button>
-       </form>
-      </div>
-    );
-  }
-
-
-
-  renderAddForm() {
-    return (
-      <div id="AddForm">
-       <form onSubmit = {(event) => {
-           this.props.handleSongSubmit(event);
-           this.setState({isBeingAdded: false});
-        }}
-         >
-        <input
-            name='artist' 
-            type='text' 
-            value={this.props.artist}
-            placeholder='Artist'
-            onChange={this.props.handleInputArtistChange}
-        />
-        <input 
-            name='song'
-            type='text' 
-            value={this.props.song}
-            placeholder='Song'
-            onChange={this.props.handleInputSongChange}
+            onChange={this.handleInputSrcChange}
         />
         <input
-            name='src' 
-            type='text'
-            value={this.props.src} 
-            placeholder='link'
-            onChange={this.props.handleInputSrcChange}
+            style={{visibility: 'hidden'}}
+            readOnly
+            name="id"
+            value={this.props.playlist.id}
         />
         <button>save</button>
        </form>
@@ -88,9 +72,6 @@ class Song extends Component {
     renderPlaylist() {
         return(
             <div className='songLi'>
-                <button className='addSongBtn'onClick={()=> {
-                    this.setState({isBeingAdded: true})
-                }}>add song</button>
                 <div>
                 <button className='songs' onClick={() => {this.props.onSongClick(this.props.index)}}>
                     <h4>{this.props.playlist.song}</h4>
